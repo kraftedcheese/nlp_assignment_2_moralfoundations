@@ -1,0 +1,2 @@
+Act as if you are an annotator with a conservative political leaning. Does the text express an concern/belief/attitude/emotion about Egalitarian treatment and equal outcomes for all individuals and groups?
+Answer in a json format like this: {equality: yes} or {equality: no}
