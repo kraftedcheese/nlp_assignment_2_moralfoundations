@@ -31,65 +31,79 @@ After your label(s), rate your confidence:
 - **Not Confident**: you can see a case for or against a label but cannot resolve it
 
 ---
-
 ## Examples
 
 **Comment:** "We have an obligation to take care of the elderly. It's what a decent society does."
-**Label:** Care, Authority
-**Confidence:** Very Confident
-**Reason:** "Obligation" invokes Authority (duty to social norms); "take care of the elderly" invokes Care (compassion, protecting the vulnerable). Both are clearly and explicitly present.
-
----
+**Response:**
+{
+  "labels": ["Care", "Authority"],
+  "confidence": "Very Confident",
+  "reason": "'Obligation' invokes Authority (duty); 'take care of the elderly' invokes Care (compassion)."
+}
 
 **Comment:** "It's a shame skin color still fuels so much hatred in this country."
-**Label:** Care
-**Confidence:** Very Confident
-**Reason:** Implicitly expresses concern about harm to individuals based on race — a Care expression without using explicit Care words.
-
----
+**Response:**
+{
+  "labels": ["Care"],
+  "confidence": "Very Confident",
+  "reason": "Implicitly expresses concern about harm to individuals based on race — a Care expression without using explicit Care words."
+}
 
 **Comment:** "Children should be taught to respect their elders and follow the rules of their household."
-**Label:** Authority
-**Confidence:** Very Confident
-**Reason:** Explicitly invokes obedience to hierarchy (elders, household rules) — a core Authority virtue.
-
----
+**Response:**
+{
+  "labels": ["Authority"],
+  "confidence": "Very Confident",
+  "reason": "Explicitly invokes obedience to hierarchy (elders, household rules) — a core Authority virtue."
+}
 
 **Comment:** "Pumping your body full of chemicals and processed food is just wrong. The body is a temple."
-**Label:** Purity
-**Confidence:** Very Confident
-**Reason:** Directly invokes the Purity foundation — the body as sacred, contamination by unnatural substances. "Wrong" here is used in a Purity context, not as thin morality.
-
----
+**Response:**
+{
+  "labels": ["Purity"],
+  "confidence": "Very Confident",
+  "reason": "Directly invokes the Purity foundation — the body as sacred, contamination by unnatural substances. "Wrong" here is used in a Purity context, not as thin morality."
+}
 
 **Comment:** "Why would anyone defend someone who does something that disgusting?"
-**Label:** Purity
-**Confidence:** Somewhat Confident
-**Reason:** "Disgusting" is a Purity signal, but the referent is vague. The moral judgment is clearly present but context is limited — confidence is reduced.
+**Response:**
+{
+  "labels": ["Purity"],
+  "confidence": "Somewhat Confident",
+  "reason": "'Disgusting' is a Purity signal, but the referent is vague. The moral judgment is clearly present but context is limited — confidence is reduced."
+}
 
----
 
 **Comment:** "He's just a good guy who genuinely tries to help people."
-**Label:** TM
-**Confidence:** Very Confident
-**Reason:** "Good guy" is a clear moral judgment, but it does not specifically invoke Care, Authority, or Purity. This is thin morality.
-
----
+**Response:**
+{
+  "labels": ["TM"],
+  "confidence": "Very Confident",
+  "reason": ""Good guy" is a clear moral judgment, but it does not specifically invoke Care, Authority, or Purity. This is thin morality."
+}
 
 **Comment:** "That play was absolutely brutal, the defense destroyed them."
-**Label:** NM
-**Confidence:** Very Confident
-**Reason:** "Brutal" and "destroyed" are used colloquially about a sports play. No moral content.
+**Response:**
+{
+  "labels": ["NM"],
+  "confidence": "Very Confident",
+  "reason": ""Brutal" and "destroyed" are used colloquially about a sports play. No moral content."
+}
 
----
 
 **Comment:** "I pray every night that my family stays safe."
-**Label:** Care
-**Confidence:** Somewhat Confident
-**Reason:** Prayer could suggest Purity (spiritual practice), but the expressed concern is explicitly about protecting family from harm — a Care concern. Apply conservative labeling: Care only.
+**Response:**
+{
+  "labels": ["Care"],
+  "confidence": "Somewhat Confident",
+  "reason": "Prayer could suggest Purity (spiritual practice), but the expressed concern is explicitly about protecting family from harm — a Care concern. Apply conservative labeling: Care only."
+}
 
 ---
 
-Now annotate the following comment. Return your label(s), confidence, and a one-sentence reason.
+## Final Task
+Annotate the comment provided below. Return ONLY the JSON object. Do not include any text before or after the JSON.
 
 **Comment:** "{TEXT}"
+
+**Response:**
