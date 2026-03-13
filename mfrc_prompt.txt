@@ -73,7 +73,6 @@ After your label(s), rate your confidence:
   "reason": "'Disgusting' is a Purity signal, but the referent is vague. The moral judgment is clearly present but context is limited — confidence is reduced."
 }
 
-
 **Comment:** "He's just a good guy who genuinely tries to help people."
 **Response:**
 {
@@ -89,7 +88,6 @@ After your label(s), rate your confidence:
   "confidence": "Very Confident",
   "reason": ""Brutal" and "destroyed" are used colloquially about a sports play. No moral content."
 }
-
 
 **Comment:** "I pray every night that my family stays safe."
 **Response:**
