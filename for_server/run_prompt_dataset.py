@@ -64,10 +64,11 @@ def main():
     parser.add_argument("--user_prompt", required=True, help="User prompt or path to .txt")
 
     # Optional Defaults
+    parser.add_argument("--output_dir", default="output_batches", help="Directory to save batch results") # Added this
     parser.add_argument("--system_prompt", default="You are a helpful assistant.", help="System prompt or path to .txt")
     parser.add_argument("--use_json", action="store_true", help="Whether the output of the LLM will be structured JSON")
     parser.add_argument("--model", default="meta-llama/Meta-Llama-3-8B-Instruct", help="vLLM model name")
-    parser.add_argument("--temperature", type=float, default=0.1) # Lowered default for more stable JSON
+    parser.add_argument("--temperature", type=float, default=0.1) 
     parser.add_argument("--sep", default="\t", help="CSV separator (default: tab)")
 
     args = parser.parse_args()
@@ -83,24 +84,23 @@ def main():
     print(f"Loading {args.input_file}...")
     df = pd.read_csv(args.input_file, sep=args.sep)
 
-    # Toggle this line: Comment it out to run the whole file
-    # df = df.head(5)
-
     print(f"Processing {len(df)} rows. JSON mode: {args.use_json}")
 
     batch_size = 100
-    output_dir = "output_batches"
-    os.makedirs(output_dir, exist_ok=True)
+    # Use the argument for output directory and create it
+    os.makedirs(args.output_dir, exist_ok=True)
 
     print(f"Processing {len(df)} rows in batches of {batch_size}...")
 
     for batch_idx, group in df.groupby(np.arange(len(df)) // batch_size):
-        batch_filename = os.path.join(output_dir, f"batch_{batch_idx}.json")
+        # Update file path to use args.output_dir
+        batch_filename = os.path.join(args.output_dir, f"batch_{batch_idx}.json")
 
         # skip batch if exists
         if os.path.exists(batch_filename):
             print(f"Skipping Batch {batch_idx} (already finished).")
             continue
+            
         annotations = []
         
         for idx, row in group.iterrows():
