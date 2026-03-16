@@ -59,7 +59,6 @@ def main():
 
     # Required Arguments
     parser.add_argument("--input_file", required=True, help="Path to input CSV/TSV")
-    parser.add_argument("--output_file", required=True, help="Path to save results")
     parser.add_argument("--text_column", required=True, help="Column name to process")
     parser.add_argument("--user_prompt", required=True, help="User prompt or path to .txt")
 
