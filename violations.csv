@@ -1,0 +1,4 @@
+item_id,annotator,label_set,type
+5162410832240550048,LLM,"frozenset({'Non-Moral', 'Authority'})",label_conflict
+5162410832240550048,LLM,"frozenset({'Non-Moral', 'Authority'})",label_conflict
+5162410832240550048,LLM,"frozenset({'Non-Moral', 'Authority'})",label_conflict
