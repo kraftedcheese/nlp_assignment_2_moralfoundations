@@ -51,3 +51,8 @@ subsets:
   sociodemographic personas; full profiles for 2 individual annotators
 
 ## Repository Structure
+├── data/ # MFRC dataset files
+├── prompts/ # Prompt templates used for annotation
+├── scripts/ # Inference and evaluation code
+├── results/ # Output annotations and α scores
+└── report/ # Full paper (LaTeX source)
